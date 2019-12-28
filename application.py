@@ -40,7 +40,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 db = SQL("sqlite:///texts1.db")
-
+# purges user data after 5 minutes of inactivity
 def data_purge():
     import time
     while True:
