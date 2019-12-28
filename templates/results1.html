@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<form action="/results" method="post">
+<div class="form-group">
+  <label for="sel1">Check Another Emoji:</label>
+  <select class="form-control" id="emoji_list" name="emoji_list">
+    <option value="grin">😀</option>
+    <option value="eyesclosedgrin">😄</option>
+    <option value="Crying Laughing">😂</option>
+    <option value="❤">❤️</option>
+    <option value="hearteyes">😍</option>
+    <option value="rofl">🤣</option>
+    <option value="blushgrin">😊</option>
+    <option value="kisses">😘</option>
+  </select>
+</div>
+</div>
+  <button class="btn btn-primary" type="submit">Get Useage Stats:</button>
+</div>
+</form>
+
+<img src = "{{url_for('static', filename=image)}}" />
+{% endblock %}
