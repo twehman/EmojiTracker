@@ -24,10 +24,10 @@ def total_use(emoji, s_o_r):
     return count
 
 def import_file(file, uid):
-    # read census.csv into a dataframe : census_df
+    # read texts csv into a dataframe : texts1_df
     texts1_df = pd.read_csv(file, header=1)
     df = pd.DataFrame({'texts1_df' : ['protocol','address','date','type','subject','body','toa','sc_toa','service_center','read','status','locked','date_sent','readable_date','contact_name', 'month', 'user_id']})
-    # rename the columns of the census dataframe
+    # rename the columns of the texts dataframe
     texts1_df.columns = ['protocol','address','date','type','subject','body','toa','sc_toa','service_center','read','status','locked','date_sent','readable_date','contact_name']
     date_columns = ['readable_date']
     texts1_df['readable_date'] = pd.to_datetime(texts1_df['readable_date'], format="%b %d, %Y %I:%M:%S %p")
