@@ -1,9 +1,7 @@
 import os
 import django
 import sys
-from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session, url_for
-from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -39,7 +37,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-db = SQL("sqlite:///texts1.db")
+engine = SQL("sqlite:///texts1.db")
+db = engine
 # purges user data after 5 minutes of inactivity
 def data_purge():
     import time
